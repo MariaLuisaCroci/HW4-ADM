@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <img width="460" height="250" src="http://www.agenziandreaonesti.it/wp-content/uploads/2018/08/immobiliare-1024x291.png">
+  <img width="430" height="250" src="http://www.agenziandreaonesti.it/wp-content/uploads/2018/08/immobiliare-1024x291.png">
 </p>
 
 The repository consists of the following files:
