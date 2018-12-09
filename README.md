@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <img width="460" height="250" src="https://www.rhemagroup.it/wp-content/uploads/2017/01/immobiliareit_logo.jpg">
+  <img width="460" height="250" src="http://www.agenziandreaonesti.it/wp-content/uploads/2018/08/immobiliare-1024x291.png">
 </p>
 
 The repository consists of the following files:
