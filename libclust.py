@@ -2,6 +2,7 @@ import numpy as np
 
 class KMeans:
 
+    # Recompute centers
     def recomputeCentroids(self, cluster):
         centroids = []
         for key in cluster:
@@ -9,6 +10,7 @@ class KMeans:
             centroids += [center]
         return centroids
 
+    # Reassign every single point to the closest cluster
     def assignPoints(self):
         clus = {i : [] for i in range(self.k)}
         self.clusArray = []
@@ -27,26 +29,32 @@ class KMeans:
 
     def __init__ (self, X, k):
         np.random.seed(1234)
-        # 1. Select k points at random from X
-        # 2. While centroid not stable, reassign and recompute
+        
         self.clusArray = []
         self.m, self.d = X.shape
         self.X = X
         self.k = k
 
+        # Select k points at random from X   
         self.centroids = np.empty([self.k, self.d])
         for t,i in enumerate(np.random.choice(self.m, k, replace=False)):
             self.centroids[t] = self.X[i]
+
+        
+        # Repeate until you find the right 
         while True:
             self.clustering = KMeans.assignPoints(self)
             self.oldcentroids = self.centroids
             self.centroids = KMeans.recomputeCentroids(self, self.clustering)
-            # print(str(self.oldcentroids))
+
+            # If the old centroids and the new ones are the same, then break the cycle
             if(np.array_equal(np.array(self.oldcentroids), np.array(self.centroids))):
-                print(self.centroids)
                 break
+
+    # Gives back the clusters
     def giveCluster(self):
         return self.clustering
-    
+
+    # Gives back an array with the corrisponding cluster for the position
     def giveClusterArray(self):
         return self.clusArray
